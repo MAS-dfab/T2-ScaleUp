@@ -9,8 +9,8 @@ from CustomAnalyse import AnalyseGroup
 def setup():
     global engine
     size(1600,900,P3D)
-    engine = SubdivisionEngine(this,"/Users/dillenburger_b/Desktop/Test")
-    engine.registerRule("Test Rule",FactoryRulePyramid())
+    engine = SubdivisionEngine(this,sketchPath(""))
+    engine.registerRule("Pyramid Rule",FactoryRulePyramid())
     engine.registerAnalyserFace("Area", AnalyseFaceArea())
     engine.registerAnalyserFace("Group", AnalyseGroup())
     engine.registerRenderer("Standard", Renderer());
@@ -18,7 +18,7 @@ def setup():
     engine.initMesh(None)
     
 def draw():
-    global engine
+    #global engine
     engine.draw()
     engine.drawGUI()
 

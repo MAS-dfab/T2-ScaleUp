@@ -5,12 +5,14 @@ import hdgeom.mesh.Mesh as Mesh
 import hdgeom.mesh.Face as Face
 
 # class which extends the AbstractRule class
+# method needs to be called 'replace', needs to take a mesh as input
+# and return a mesh as output
 class RulePyramid(AbstractRule):
     def __init__(self):
         self.factorExtrude=100
-    def replace(self, mesh):
+    def replace(self, oldMesh):
         newMesh=Mesh()
-        for face in mesh.faces:
+        for face in oldMesh.faces:
             newFaces=FaceRules.extrudeToPoint(face, self.factorExtrude)
             counter=0
             for cFace in newFaces:
@@ -21,6 +23,7 @@ class RulePyramid(AbstractRule):
         return newMesh
     
 # class which extends the AbstractFactoryRule class, used to fabricate the Rule
+# method names have to be 'fabricateRule' and 'addComponents'
 class FactoryRulePyramid(AbstractFactoryRule):
     def fabricateRule(self):
         rulePyramid=RulePyramid()
