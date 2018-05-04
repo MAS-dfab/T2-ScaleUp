@@ -1,0 +1,9 @@
+typeStreet = 0 #team traffic
+typeBlock = 1
+typePlotEmpty = 2 #team urban planner
+typePlotHighrise = 3
+typePlotLowrise = 4
+typeFacade1 = 5 #team building volumes
+typeFacade2 = 6 #team facades
+typeRoof = 7 #team roof
+typeTerrace = 8 #terraces
